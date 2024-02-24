@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  name            String           @id @unique
+  password        String
+  projects        Project[]        @relation("ProjectManager")
+  tasksCreated    Task[]           @relation("TaskAuthor")
+  tasksAssigned   TaskAssignment[] @relation("UserTasks")
+  accesses        Access[]         @relation("AccessEmployee")
+}
+
+model Project {
+  id          Int             @id @default(autoincrement())
+  title       String
+  description String
+  manager     User            @relation(fields: [managerName], references: [name], name: "ProjectManager")
+  managerName String
+  tasks       Task[]
+  accesses    Access[]
+}
+
+model Task {
+  id             Int              @id @default(autoincrement())
+  title          String
+  description    String?
+  project        Project          @relation(fields: [projectId], references: [id])
+  projectId      Int
+  effort         Int
+  status         String
+  author         User             @relation(fields: [authorName], references: [name], name: "TaskAuthor")
+  authorName     String
+  assignees      TaskAssignment[] @relation("TaskUsers")
+}
+
+model TaskAssignment {
+  task   Task @relation(fields: [taskId], references: [id], name: "TaskUsers")
+  taskId Int
+
+  user   User @relation(fields: [userName], references: [name], name: "UserTasks")
+  userName String
+
+  @@id([taskId, userName])
+}
+
+model Access {
+  id         Int      @id @default(autoincrement())
+  employee   User     @relation(fields: [employeeName], references: [name], name: "AccessEmployee")
+  employeeName String
+  project    Project  @relation(fields: [projectId], references: [id])
+  projectId  Int
+  accessType String
+}
