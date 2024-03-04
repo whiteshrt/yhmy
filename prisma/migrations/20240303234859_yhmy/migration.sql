@@ -38,10 +38,11 @@ CREATE TABLE "TaskAssignment" (
 
 -- CreateTable
 CREATE TABLE "Access" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "employeeName" TEXT NOT NULL,
     "projectId" INTEGER NOT NULL,
+    "employeeName" TEXT NOT NULL,
     "accessType" TEXT NOT NULL,
+
+    PRIMARY KEY ("projectId", "employeeName"),
     CONSTRAINT "Access_employeeName_fkey" FOREIGN KEY ("employeeName") REFERENCES "User" ("name") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Access_projectId_fkey" FOREIGN KEY ("projectId") REFERENCES "Project" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );

@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# YHMY 💼
+Application de gestion de projet.
 
-## Getting Started
+![YHMY (3).gif](..%2F..%2FDownloads%2Fimages%2FYHMY%20%283%29.gif)
 
-First, run the development server:
+### Stack utilisée :
+
+Framework global : Next.Js
+ * Backend : 
+   * Base de données : [SQLite](https://www.sqlite.org/) | Raisons : Léger, Hebergé en local, pas de configuration fastidieuse ✅
+   * ORM : [Prisma](https://prisma.io/) | Raisons : Très simple d'utilisation et très bonne compatibilité avec React ✅
+ * Frontend :
+   * Librairie UI : [NextUI](https://nextui.org/) | Raisons : Nombreux composants modernes, multi-usages et paramétrables ✅
+
+
+
+### Procédure de démarrage :
+Pour commencer, ouvrez un terminal et clonez le projet avec la commande suivante :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/whiteshrt/YHMY
+cd YHMY
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensuite tapez la commande suivante pour lancer le serveur de développement :
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ouvrez ensuite le lien [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Vous pouvez également visualiser la base de données en temps réel en tapant cette commande dans un autre terminal :
+```bash
+prisma studio
+```
+Ouvrez ensuite le lien [http://localhost:5000](http://localhost:3000) avec votre navigateur pour y accéder.
 
-## Learn More
+### Mode d'emploi
+#### 1. Page de connexion :
+![img_1.png](img_1.png)
 
-To learn more about Next.js, take a look at the following resources:
+Voici les deux profils tests auxquels vous pouvez vous connecter :
+   * Nom d'utilisateur : admin
+   * Mot de passe : admin
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   * Nom d'utilidateur : Jean
+   * Mot de passe : Azerty1234*
+   
+Le profil "admin" a le pouvoir d'ajouter de nouveaux employés et les supprimer. Il a également le pouvoir sur tous les projets et tâches.
 
-## Deploy on Vercel
+#### 2. Page d'accueil :
+Voici l'interface que vous verrez si vous vous connectez en tant qu'administrateur. Si vous êtes seulement employé, vous ne verrez que la partie de droite.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![img_2.png](img_2.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pour ouvrir un projet, cliquez simplement sur ouvrir.
+
+Lorsque vous créez un projet, vous êtes considérés d'office comme le manager de celui-ci.
+
+#### 3. Page projet
+Voici l'interface des projets.
+N'importe qui ayant accès à un projet peut y créer des tâches.
+
+![img_3.png](img_3.png)
+
+Si vous êtes manager, vous aurez également accès à un bouton "Gérer les accès" pour configurer les accès des employés ayant accès a votre projet.
+
+Si vous avez les droits sur une tâche, vous pouvez églement modifier son status (A faire, En Cours ou Fait).
+
+Enjoy !

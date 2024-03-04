@@ -1,20 +1,20 @@
-// pages/api/usercheck.ts
+// pages/api/check.ts
 import { PrismaClient } from "@prisma/client";
+import type {NextApiRequest, NextApiResponse} from "next";
 
 const prisma = new PrismaClient();
 
-async function getUsers() {
+async function getall() {
     return prisma.user.findMany();
 }
 
-// Fonction de gestion d'API exportée par défaut, en suivant la convention de Next.js
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "GET") {
         return res.status(405).json({ error: "Méthode non autorisée" });
     }
 
     try {
-        const users = await getUsers();
+        const users = await getall();
         if (users.length > 0) {
             res.status(200).json({ users: users });
         } else {
