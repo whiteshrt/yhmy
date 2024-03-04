@@ -39,7 +39,7 @@ Ouvrez ensuite le lien [http://localhost:5000](http://localhost:3000) avec votre
 
 ### Mode d'emploi
 #### 1. Page de connexion :
-![img_1.png](img_1.png)
+![img_1.png](public/img_1.png)
 
 Voici les deux profils tests auxquels vous pouvez vous connecter :
    * Nom d'utilisateur : admin
@@ -57,7 +57,7 @@ Voici l'interface que vous verrez si vous vous connectez en tant qu'administrate
 P.S : Tous les mots de passes enregistrés sont cryptés   à l'aide de la librairie bcrypt et décryptés uniquement lors de la connexion.
 
 
-![img_2.png](img_2.png)
+![img_2.png](public/img_2.png)
 
 Pour ouvrir un projet, cliquez simplement sur ouvrir.
 
@@ -67,7 +67,7 @@ Lorsque vous créez un projet, vous êtes considérés d'office comme le manager
 Voici l'interface des projets.
 N'importe qui ayant accès à un projet peut y créer des tâches.
 
-![img_3.png](img_3.png)
+![img_3.png](public/img_3.png)
 
 Si vous êtes manager, vous aurez également accès à un bouton "Gérer les accès" pour configurer les accès des employés ayant accès a votre projet.
 
