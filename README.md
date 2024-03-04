@@ -53,6 +53,9 @@ Le profil "admin" a le pouvoir d'ajouter de nouveaux employés et les supprimer.
 #### 2. Page d'accueil :
 Voici l'interface que vous verrez si vous vous connectez en tant qu'administrateur. Si vous êtes seulement employé, vous ne verrez que la partie de droite.
 
+P.S : Tous les mots de passes enregistrés sont cryptés   à l'aide de la librairie bcrypt et décryptés uniquement lors de la connexion.
+
+
 ![img_2.png](img_2.png)
 
 Pour ouvrir un projet, cliquez simplement sur ouvrir.
