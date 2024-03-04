@@ -1,7 +1,7 @@
 # YHMY 💼
 Application de gestion de projet.
 
-![YHMY (3).gif](https://i.ibb.co/rx9B39H/YHMY-3.gif)
+![](https://i.ibb.co/rx9B39H/YHMY-3.gif)
 
 ### Stack utilisée :
 
