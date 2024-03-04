@@ -1,7 +1,7 @@
 # YHMY 💼
 Application de gestion de projet.
 
-<img src="[https://i.ibb.co/rx9B39H/YHMY-3.gif](https://github.com/whiteshrt/yhmy/blob/main/public/DEMO.gif)">
+![Alt Text]([https://i.imgur.com/8M3XqVQ.gif](https://i.ibb.co/rx9B39H/YHMY-3.gif](https://github.com/whiteshrt/yhmy/blob/main/public/DEMO.gif))
 
 
 ### Stack utilisée :
