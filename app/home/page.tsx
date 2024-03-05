@@ -25,6 +25,7 @@
         const { projects, isLoading: isLoadingProjects, refetchProjects } = useProjects(loggedUser);
         const [isAddUserModalOpen, setIsAddUserModalOpen] = useState<boolean>(false);
         const [isAddProjectModalOpen, setIsAddProjectModalOpen] = useState<boolean>(false);
+        const [hoverText, setHoverText] = useState("Se déconnecter");
 
         const addUserModalOnOpen = () => setIsAddUserModalOpen(true);
         const addUserModalOnClose = () => setIsAddUserModalOpen(false);
@@ -32,8 +33,17 @@
         const addProjectModalOnClose = () => setIsAddProjectModalOpen(false);
 
         return (
-            <NextUIProvider>
-                <main className="dark flex flex-col items-center justify-center min-h-screen p-24 bg-gradient-to-r from-blue-600 to-violet-600">
+            <NextUIProvider className="bg-gradient-to-r from-blue-600 to-violet-600">
+                <Button
+                    className="mt-3 ml-3"
+                    color="danger"
+                    onClick={() => {sessionStorage.clear(); window.location.reload()}}
+                    onMouseOver={() => setHoverText("Vous êtes vraiment sûr ? 😔")}
+                    onMouseLeave={() => setHoverText("Se déconnecter")}
+                >
+                    {hoverText}
+                </Button>
+                <main className="dark flex flex-col items-center justify-center min-h-screen p-24">
                     <div className="app-container w-full flex items-center justify-center">
                         {loggedUser === 'admin' && (
                             <Card isBlurred className="border-none bg-slate-200 ease-in-out my-5 mr-20" shadow="sm">
