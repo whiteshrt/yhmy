@@ -31,8 +31,9 @@ npm run dev
 
 Ouvrez ensuite le lien [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
 
-Vous pouvez également visualiser la base de données en temps réel en tapant cette commande dans un autre terminal :
+Vous pouvez également visualiser la base de données en temps réel en tapant cette commande dans un autre terminal (en retournant dans le dossier de votre projet) :
 ```bash
+npm install -g prisma
 prisma studio
 ```
 Ouvrez ensuite le lien [http://localhost:5000](http://localhost:3000) avec votre navigateur pour y accéder.
