@@ -50,7 +50,7 @@ const ProjectInfoCard: React.FC<ProjectInfoCardProps> = ({
 
     const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
     const [page, setPage] = useState(1);
-    const rowsPerPage = 5;
+    const rowsPerPage = 4;
     const [taskName, setTaskName] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
     const [selectedUserNames, setSelectedUserNames] = useState([]);

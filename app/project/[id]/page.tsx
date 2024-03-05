@@ -36,7 +36,7 @@ export default function ProjectDetails({ params }) {
                     className="mt-5 ml-5" size='md' radius="full" color="secondary">
                 ⬅ Retourner aux projets
             </Button>
-            <main className="overflow-hidden dark flex items-start mt-28 justify-start ">
+            <main className="overflow-hidden dark flex items-start mt-5 justify-start ">
                 <div className="app-container w-full flex justify-center items-center">
                     {isLoadingProject || isLoadingUsers ? (
                         <div>Loading...</div>
