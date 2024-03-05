@@ -54,7 +54,7 @@ Le profil "admin" a le pouvoir d'ajouter de nouveaux employés et les supprimer.
 #### 2. Page d'accueil :
 Voici l'interface que vous verrez si vous vous connectez en tant qu'administrateur. Si vous êtes seulement employé, vous ne verrez que la partie de droite.
 
-P.S : Tous les mots de passes enregistrés sont cryptés   à l'aide de la librairie bcrypt et décryptés uniquement lors de la connexion.
+P.S : Tous les mots de passes sont hashés de manière sécurisée à l'aide de la librairie bcrypt.
 
 
 ![img_2.png](public/img_2.png)
@@ -65,12 +65,14 @@ Lorsque vous créez un projet, vous êtes considérés d'office comme le manager
 
 #### 3. Page projet
 Voici l'interface des projets.
-N'importe qui ayant accès à un projet peut y créer des tâches.
+
 
 ![img_3.png](public/img_3.png)
 
+N'importe qui ayant les accès lecture et écriture peut y créer des tâches. Quelqu'un ayant les accès uniquement en lecture ne verra pas le formulaire d'ajout de tâche ni les actions liées.
+
 Si vous êtes manager, vous aurez également accès à un bouton "Gérer les accès" pour configurer les accès des employés ayant accès a votre projet.
 
-Si vous avez les droits sur une tâche, vous pouvez églement modifier son status (A faire, En Cours ou Fait).
+L'auteur d'une tâche et le manager du projet peuvent changer son statut en cliquant sur son bouton (A faire, En cours, Fait).
 
 Enjoy !
