@@ -31,12 +31,12 @@ export default function ProjectDetails({ params }) {
 
 
     return (
-        <NextUIProvider className="bg-gradient-to-r from-blue-600 to-violet-600">
+        <NextUIProvider className=" bg-gradient-to-r from-blue-600 to-violet-600 min-h-screen">
             <Button onClick={() => router.push(`/home`)}
                     className="mt-5 ml-5" size='md' radius="full" color="secondary">
                 ⬅ Retourner aux projets
             </Button>
-            <main className="dark flex items-start justify-start mt-28 min-h-screen">
+            <main className="overflow-hidden dark flex items-start mt-28 justify-start ">
                 <div className="app-container w-full flex justify-center items-center">
                     {isLoadingProject || isLoadingUsers ? (
                         <div>Loading...</div>
